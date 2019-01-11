@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import RedditPage from './app/container/RedditPage';
 import GitPage from './app/container/GitPage';
 import MainBar from './app/container/MainBar';
-import { Router, Scene, Drawer } from 'react-native-router-flux';
+import { Router, Scene } from 'react-native-router-flux';
 
 class App extends Component {
 
@@ -19,7 +19,7 @@ class App extends Component {
       <Router>
         <Scene key='root'>
           <Scene
-            key='reddit'
+            key='mainBar'
             component={MainBar}
             hideNavBar
             initial
