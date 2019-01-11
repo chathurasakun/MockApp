@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
-import { Container, Header, Tab, Tabs } from 'native-base';
+import { Image, Text } from 'react-native';
+import { Container, Header, Tab, Tabs, TabHeading } from 'native-base';
 import RedditPage from './RedditPage';
 import GitPage from './GitPage';
 import HeaderBarStyle from '../style/TabBarStyle';
@@ -14,7 +14,7 @@ class MainBar extends Component {
             <Container>
                 <Header style={{ height: hp('10%') }}>
                     <Image
-                        source={Images.icon1}
+                        source={Images.icon3}
                         style={{
                             alignItems: 'center',
                             justifyContent: 'center'
@@ -30,20 +30,24 @@ class MainBar extends Component {
                     tabBarBackgroundColor='#ffffff'
                     tabContainerStyle={{ height: hp('10%') }}
                 >
-                    <Tab heading='Reddit'
+                    <Tab heading={
+                        <TabHeading style={{ flexDirection: 'column' }}>
+                            <Image source={Images.reddit6} />
+                            <Text style={{ color: '#2868D4' }}>reddit</Text>
+                        </TabHeading>
+                    }
                         tabStyle={HeaderBarStyle.tabHeading}
-                        activeTabStyle={HeaderBarStyle.activeTabStyle}
-                        textStyle={HeaderBarStyle.tabHeadingText}
-                        activeTextStyle={HeaderBarStyle.activeTabHeadingText}
                     >
                         <RedditPage />
                     </Tab>
 
-                    <Tab heading='Git'
+                    <Tab heading={
+                        <TabHeading style={{ flexDirection: 'column' }}>
+                            <Image source={Images.git5} />
+                            <Text style={{ color: '#2868D4' }}>Git</Text>
+                        </TabHeading>
+                    }
                         tabStyle={HeaderBarStyle.tabHeading}
-                        activeTabStyle={HeaderBarStyle.activeTabStyle}
-                        textStyle={HeaderBarStyle.tabHeadingText}
-                        activeTextStyle={HeaderBarStyle.activeTabHeadingText}
                     >
                         <GitPage />
                     </Tab>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ActivityIndicator, FlatList } from 'react-native';
-import { Container, View } from 'native-base';
+import { Container } from 'native-base';
 import { getAll } from '../../serverMethods/backendMethods';
 import Cell from '../component/Cell';
 
@@ -29,16 +29,13 @@ class GitPage extends Component {
 
     render = () => {
         return (
-            <Container>
+            <Container style={{ backgroundColor: '#EDEDEE' }}>
                 <FlatList
                     data={this.state.responseData}
                     keyExtractor={(item, index) => index}
                     renderItem={({ item }) =>
-                        <Cell title={item.name} picUrl={item.thumbnail} link={item.url} desc={item.description} />
+                        <Cell title={item.name} link={item.url} desc={item.description} fromReddit={false} />
                     }
-                    ListFooterComponent={() => {
-                        return (<View style={{ borderTopColor: '#78909C', borderTopWidth: 1 }} />)
-                    }}
                 />
 
                 {(this.state.isFetching) ?
@@ -53,7 +50,7 @@ class GitPage extends Component {
                             justifyContent: 'center'
                         }}
                         animating size='large'
-                        color='#00ff00'
+                        color='#2868D4'
                     />
                     :
                     null
