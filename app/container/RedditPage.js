@@ -37,7 +37,7 @@ class Reddit extends Component {
                         <Cell title={item.data.title} picUrl={item.data.thumbnail} link={item.data.url} desc={item.data.description} />
                     }
                     ListFooterComponent={() => {
-                        return (<View style={{ borderTopColor: 'grey', borderTopWidth: 1 }} />)
+                        return (<View style={{ borderTopColor: '#78909C', borderTopWidth: 1 }} />)
                     }}
                 />
 

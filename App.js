@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import RedditPage from './app/container/RedditPage';
 import GitPage from './app/container/GitPage';
+import MainBar from './app/container/MainBar';
 import { Router, Scene, Drawer } from 'react-native-router-flux';
 
 class App extends Component {
@@ -16,18 +17,25 @@ class App extends Component {
   render = () => {
     return (
       <Router>
-        <Scene key='root' tabs={true}>
+        <Scene key='root'>
           <Scene
             key='reddit'
-            component={RedditPage}
-            title='Reddit'
+            component={MainBar}
+            hideNavBar
             initial
-          />
-          <Scene
-            key='git'
-            component={GitPage}
-            title='Git'
-          />
+          >
+            <Scene
+              key='reddit'
+              component={RedditPage}
+              hideNavBar
+              initial
+            />
+            <Scene
+              key='git'
+              component={GitPage}
+              hideNavBar
+            />
+          </Scene>
         </Scene>
       </Router>
     );

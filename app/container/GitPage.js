@@ -37,7 +37,7 @@ class GitPage extends Component {
                         <Cell title={item.name} picUrl={item.thumbnail} link={item.url} desc={item.description} />
                     }
                     ListFooterComponent={() => {
-                        return (<View style={{ borderTopColor: 'grey', borderTopWidth: 1 }} />)
+                        return (<View style={{ borderTopColor: '#78909C', borderTopWidth: 1 }} />)
                     }}
                 />
 
@@ -61,7 +61,6 @@ class GitPage extends Component {
             </Container>
         );
     }
-
 }
 
 export default GitPage;
