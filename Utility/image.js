@@ -2,7 +2,6 @@ const images = {
     icon1: require('../images/1.png'),
     icon2: require('../images/2.png'),
     icon3: require('../images/3.png'),
-    icon4: require('../images/icon1.png'),
     reddit1: require('../images/reddit1.png'),
     reddit2: require('../images/reddit2.png'),
     reddit3: require('../images/reddit3.png'),
